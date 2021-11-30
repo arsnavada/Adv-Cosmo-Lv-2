@@ -1,7 +1,6 @@
 var player,plrupanime, plrdownanime, misslegroup, missleanime, missle, edges, enemy1group, enemy2group, enemy3group;
 var enemy4group, enemy5group, eny1, eny2, eny3, eny4, eny5, enyimg, bg, plrlife="100", plrdedanime, end, endimg;
-var score="5",laser;
-var
+var score='5',laser;
 function preload() {
   plrgtanime=loadAnimation("assets/plright.gif");
   missleanime=loadAnimation("assets/missile.gif");
@@ -9,7 +8,7 @@ function preload() {
   plrdedanime=loadImage("assets/plrded2.png");  
   endimg=loadImage("assets/finish .png");     
   enyimg=loadImage("assets/enemy.png");    
-  laser=loadSound("assetslaser.mp4");                                                              
+  laser=loadSound("assets/laser.mp4");                                                              
 }
 function setup() {
     createCanvas(windowWidth,windowHeight);
@@ -26,7 +25,7 @@ function setup() {
     enemy4group=new Group();
 
     var reload=createButton('Refresh Game');
-    reload.position(width/2+100,30);
+    reload.position(width/2+100,50);
     reload.mousePressed(()=>{
       location.replace("index.html") ;
     });
@@ -58,28 +57,28 @@ function draw() {
      }
 
      if (frameCount % 75 === 0){
-         eny1=createSprite(2000,100,50,50);
+         eny1=createSprite(2000,120,50,50);
          eny1.velocityX=-20;
          eny1.addImage("eny", enyimg);
          eny1.scale=0.5
          enemy1group.add(eny1);
-         eny1.y = Math.round(random(100,740));
+         eny1.y = Math.round(random(120,740));
     }
     if (frameCount % 120 === 0){
-      eny2=createSprite(2000,100,50,50);
+      eny2=createSprite(2000,120,50,50);
       eny2.velocityX=-20;
       eny2.addImage("eny", enyimg);
       eny2.scale=0.5;
       enemy2group.add(eny2);
-      eny2.y = Math.round(random(100,740));
+      eny2.y = Math.round(random(120,740));
  }
      if (frameCount % 200 === 0){
-        eny3=createSprite(2000,100,50,50);
+        eny3=createSprite(2000,120,50,50);
         eny3.velocityX=-20;
         eny3.addImage("eny", enyimg);
         eny3.scale=0.5
         enemy3group.add(eny3);
-        eny3.y = Math.round(random(100,740));
+        eny3.y = Math.round(random(120,740));
 }
 if (frameCount>2500){
   finish();
